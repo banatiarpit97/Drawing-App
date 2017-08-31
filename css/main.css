@@ -1,0 +1,60 @@
+body{
+	text-align: center;
+	background: url(../images/logo3.jpg) center center ;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.heading{
+	margin-top: 0;
+	font-weight: bold;
+	font-size: 40px;
+	padding: 2%;
+}
+
+.heading_div{
+	background: linear-gradient(white, #02D1F9);
+	width:30%;
+	margin: auto;
+}
+.stroke_size{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: black;
+	margin: auto;
+}
+.row2{
+	padding: 1%;
+}
+.row3{
+	margin-top: -1%;
+}
+.slider_content{
+	background-color: transparent;
+	width:20%;
+	margin: auto;
+}
+.slider_input{
+	height:36px;
+	padding-left: 0;
+}
+#drawing{
+	width: 70%;
+	height: 63%;
+	background-color: white;
+	border-radius: 10px;
+	border-style: solid;
+	border-width: 4px;
+	border-color: black;
+}
+.button_content{
+	background: transparent;
+	/*margin-top: -0.9%;*/
+}
+.erase, .save, .clear{
+	margin-right: 3%;
+	font-weight: bold;
+	color: white !important;
+}
