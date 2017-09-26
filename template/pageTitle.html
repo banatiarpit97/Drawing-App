@@ -1,0 +1,52 @@
+<div>
+  <style>
+  .dialog_box{
+    width: 400px;
+    max-width: 100%;
+    }
+    md-input-container{
+      margin-bottom: 0 !important;
+    }
+    md-content{
+      padding-bottom: 0 !important;
+    }
+  </style>
+
+<md-dialog class = "dialog_box">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h1>Enter Title of your Drawing</h1>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="close()">
+                    <i class="fa fa-times fa-lg"></i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <form>
+                    <md-content layout-padding>
+                    <md-input-container class="md-block start">
+                        <label>Image Title(Optional)</label>
+                        <input type="text" ng-model="title">
+                    </md-input-container>
+                    </md-content>
+
+
+                </form>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="cancel()">
+                Cancel
+            </md-button>
+            <md-button  md-no-ink class="md-primary" ng-click="confirmTitle()">
+                Submit
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+</div>

@@ -3,7 +3,7 @@
 
 <head>
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
-	<title>Maths Tutorials</title>
+	<title>Drawing App</title>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +23,7 @@
 
 <!--Color Selector-->
 <div class="row1">
-    <input type="color" list>
+    <input type="color" class="selectColor" ng-model = "strokecolor" list>
 </div>
 <!--Color Selector-->
 
@@ -37,7 +37,7 @@
 <div class="row3">
     <md-content class = slider_content>
         <md-slider-container>
-            <md-slider flex min="3" max="30" ng-model="width" aria-label="red" id="red-slider">
+            <md-slider flex min="2" max="30" ng-model="width" aria-label="red" id="red-slider">
             </md-slider>
             <md-input-container>
                 <input flex type="number" ng-model="width" aria-label="red" aria-controls="red-slider" style="height: 37px;padding-left: 0">
@@ -48,9 +48,11 @@
 <!--slider-->
 
 <!--Canvas-->
-<Canvas id="drawing">
+<div class="canvas_container">
+<canvas id="drawing">
 
-</Canvas>
+</canvas>
+</div>
 <!--Canvas-->
 
 <!--Buttons-->
@@ -59,6 +61,7 @@
         <md-button class="md-raised md-primary erase">Erase</md-button>
         <md-button class="md-raised md-primary save">Save</md-button>
         <md-button class="md-raised md-primary clear">Clear</md-button>
+        <md-button class="md-raised md-primary print" ng-click = "title();">Print</md-button>
     </section>
 </md-content>
 <!--Buttons-->
@@ -75,11 +78,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
-  <!--Script FIles included here -->
-  <!--<script >-->
-	<!--angular.module('DrawingApp',['ngMaterial']);-->
-
-<!--</script>-->
 </body>
 
 </html>
