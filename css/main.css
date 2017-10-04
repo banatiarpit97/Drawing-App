@@ -51,8 +51,6 @@ body{
 	margin: auto;
 }
 #drawing{
-	width: 100%;
-	height: 66.5%;
 	background-color: white;
 	border-radius: 10px;
 	border-style: solid;
@@ -80,11 +78,14 @@ body{
 	.canvas_container, .canvas_container *{
 		display: block ;
 	}
+	#title{
+		display: block;
+	}
 	.canvas_container{
 		position: absolute;
-		top: 400px;
-		left: 120px;
-		transform: scale(1.3, 2);
+		top: 250px;
+		left: 50px;
+		transform: scale(1, 1);
 	}
 }
 

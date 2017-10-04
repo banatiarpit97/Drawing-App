@@ -30,7 +30,7 @@
                     <md-content layout-padding>
                     <md-input-container class="md-block start">
                         <label>Image Title(Optional)</label>
-                        <input type="text" ng-model="title">
+                        <input type="text" ng-model="printTitle">
                     </md-input-container>
                     </md-content>
 
@@ -43,7 +43,7 @@
             <md-button ng-click="cancel()">
                 Cancel
             </md-button>
-            <md-button  md-no-ink class="md-primary" ng-click="confirmTitle()">
+            <md-button  md-no-ink class="md-primary" ng-click = "print()">
                 Submit
             </md-button>
         </md-dialog-actions>

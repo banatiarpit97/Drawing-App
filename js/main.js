@@ -1,3 +1,4 @@
+// $(function(){
 var a = angular.module('DrawingApp', ['ngMaterial'])
     a.config(function($mdThemingProvider) {
         $mdThemingProvider.theme('default')
@@ -19,17 +20,19 @@ var a = angular.module('DrawingApp', ['ngMaterial'])
 
          function DialogController($scope, $mdDialog) {
 
-            $scope.rangeError =  function(){
-                window.alert('hh')
-            }
                          $scope.close = function() {
                                  $mdDialog.cancel();
                          };
                          $scope.cancel = function() {
                                  $mdDialog.cancel();
                          };
-                         $scope.confirmTile = function() {
-                                 $scope.rangeError();  
+                         $scope.print = function() {
+                                 console.log("hh")
+                                 $("#title").html($scope.printTitle).removeClass("hidden");
+                                 window.print();
+                                 $("#title").addClass("hidden");
+                                 $mdDialog.cancel();
+
                          }  
         }                     
         $scope.width = 2;
@@ -65,18 +68,20 @@ var a = angular.module('DrawingApp', ['ngMaterial'])
         ctx.lineJoin = "round";
         ctx.lineCap = "round";
 
-        canvasContainer.mousedown(function(e){
+        $("#drawing").mousedown(function(e){
             paint = true;
             ctx.beginPath();
-            mouse.x = e.pageX - this.offsetLeft;
-            mouse.y = e.pageY - this.offsetTop;
-            console.log(mouse.x)
+            mouse.x = e.clientX - $(this).position().left;
+            mouse.y = e.pageY - $(this).position().top;
+            console.log(e.pageX,  this.offsetLeft, mouse.x, mouse.y)
+
             ctx.moveTo(mouse.x, mouse.y);
         });
 
-        canvasContainer.mousemove(function(e){
-            mouse.x = e.pageX - this.offsetLeft;
-            mouse.y = e.pageY - this.offsetTop; 
+        $("#drawing").mousemove(function(e){
+            mouse.x = e.pageX - $(this).position().left;
+            mouse.y = e.pageY - $(this).position().top; 
+
            if(paint == true){
                 if(paintOrErase == "paint"){
                     ctx.strokeStyle = $('.selectColor').val();
